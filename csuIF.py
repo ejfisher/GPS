@@ -1,7 +1,7 @@
 import csuGPS
 import time
 
-#csuGPS.init()
+csuGPS.init()
 
 while True:
 	csuGPS.acquire()
