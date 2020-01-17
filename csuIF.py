@@ -1,8 +1,8 @@
 import csuGPS
 import time
 
-gps = csuGPS.init()
-type(gps)
+#gps = csuGPS.init()
+#print(type(gps))
 
 while True:
 	csuGPS.acquire(gps)
