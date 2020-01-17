@@ -37,7 +37,7 @@ def acquire():
 	# though if you don't care and instead look at the has_fix property).
 	gps.update()
 	# Every second print out current location details if there's a fix.
-	if not gps.has_fix:
+	while not gps.has_fix:
 		# Try again if we don't have a fix yet.
 		print('Waiting for fix...')
 		#continue
