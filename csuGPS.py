@@ -12,7 +12,7 @@ def init():
 	 
 	# Create a GPS module instance.
 	gps = adafruit_gps.GPS(uart, debug=False)     # Use UART/pyserial
-	 
+	print(type(gps)) 
 	# Turn on the basic GGA and RMC info (what you typically want)
 	gps.send_command(b'PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 
