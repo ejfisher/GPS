@@ -1,8 +1,8 @@
-	import time
-	import board
-	import busio
-	import serial
-	import adafruit_gps
+import time
+import board
+import busio
+import serial
+import adafruit_gps
 
 def acquire():
 	# Simple GPS module demonstration.
