@@ -25,7 +25,7 @@ def acquire():
 	if not gps.has_fix:
 	# Try again if we don't have a fix yet.
 		print('Waiting for fix...')
-		continue
+		#continue
 	# We have a fix! (gps.has_fix is true)
 	# Print out details about the fix like location, date, etc.
 	print('=' * 40)  # Print a separator line.
