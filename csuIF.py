@@ -5,5 +5,5 @@ import time
 #print(type(gps))
 
 while True:
-	csuGPS.acquire(True)
+	csuGPS.acquire()
 	time.sleep(1)
