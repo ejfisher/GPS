@@ -4,22 +4,21 @@ import busio
 import serial
 import adafruit_gps
 
-gps = 0
 
-def init():
-	# for a computer, use the pyserial library for uart access
-	uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)
-	 
-	# Create a GPS module instance.
-	gps = adafruit_gps.GPS(uart, debug=False)     # Use UART/pyserial
-	 
-	# Turn on the basic GGA and RMC info (what you typically want)
-	gps.send_command(b'PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
+#def init():
+# for a computer, use the pyserial library for uart access
+uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)
+ 
+# Create a GPS module instance.
+gps = adafruit_gps.GPS(uart, debug=False)     # Use UART/pyserial
+ 
+# Turn on the basic GGA and RMC info (what you typically want)
+gps.send_command(b'PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 
-	# Set update rate to once a second (1hz) which is what you typically want.
-	gps.send_command(b'PMTK220,1000')
-	# This would be twice a second (2hz, 500ms delay):
-	# gps.send_command(b'PMTK220,500')
+# Set update rate to once a second (1hz) which is what you typically want.
+gps.send_command(b'PMTK220,1000')
+# This would be twice a second (2hz, 500ms delay):
+# gps.send_command(b'PMTK220,500')
 
 def acquire():
 
