@@ -4,14 +4,12 @@ import busio
 import serial
 import adafruit_gps
 
-def acquire():
-	# Simple GPS module demonstration.
-	# Will wait for a fix and print a message every second with the current location
-	# and other details.
 
 
+def init():
 	# for a computer, use the pyserial library for uart access
-
+	global uart
+	global gps
 	uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)
 
 	# Create a GPS module instance.
@@ -22,9 +20,19 @@ def acquire():
 
 
 	# Set update rate to once a second (1hz) which is what you typically want.
-	# gps.send_command(b'PMTK220,1000')
+	gps.send_command(b'PMTK220,1000')
 	# This would be twice a second (2hz, 500ms delay):
-	gps.send_command(b'PMTK220,500')
+	# gps.send_command(b'PMTK220,500')	
+
+def acquire():
+	# Simple GPS module demonstration.
+	# Will wait for a fix and print a message every second with the current location
+	# and other details.
+	global gps
+	global uart
+
+
+
 
 	# Main loop runs forever printing the location, etc. every second.
 	last_print = time.monotonic()
@@ -36,7 +44,7 @@ def acquire():
 		gps.update()
 		# Every second print out current location details if there's a fix.
 		current = time.monotonic()
-		if current - last_print >= 0.5:
+		if current - last_print >= 1.0:
 			last_print = current
 		if not gps.has_fix:
 			# Try again if we don't have a fix yet.
