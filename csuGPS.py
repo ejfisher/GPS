@@ -4,6 +4,8 @@ import busio
 import serial
 import adafruit_gps
 
+gps = 0
+
 def init():
 	# for a computer, use the pyserial library for uart access
 	uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)
