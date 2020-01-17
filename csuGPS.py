@@ -48,7 +48,7 @@ def acquire():
 	gpsData = (gps.latitude, gps.longitude, gps.altitude_m, gps.speed_knots, gps.track_angle_deg, gps.horizontal_dilution)
 	gpsQuality = (gps.fix_quality, gps.satellites)
 	print('=' * 40)  # Print a separator line.
-	print('Fix timestamp: {0[0]:02}:{0[0]:02}:{0[0]:02} '.format(time))
+	print('Fix timestamp: {0[0]:02}:{0[1]:02}:{0[2]:02} '.format(time))
 	print('Latitude: {0:.6f} degrees'.format(gps.latitude))
 	print('Longitude: {0:.6f} degrees'.format(gps.longitude))
 	print('Fix quality: {}'.format(gps.fix_quality))
