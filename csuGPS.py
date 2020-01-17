@@ -20,12 +20,12 @@ def init():
 	# gps.send_command(b'PMTK220,500')
 	return gps
 
-def acquire(init):
+def acquire(initBool):
 
-	if(init):
+	if(initBool):
 		print("Initializing...\n")
 		gps = init()
-		init = False
+		initBool = False
 	gps.update()
 	if not gps.has_fix:
 	# Try again if we don't have a fix yet.
