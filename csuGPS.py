@@ -4,7 +4,7 @@ import busio
 import serial
 import adafruit_gps
 
-gps = adafruit_gps.GPS()
+
 
 def init():
 	# for a computer, use the pyserial library for uart access
@@ -20,8 +20,9 @@ def init():
 	gps.send_command(b'PMTK220,1000')
 	# This would be twice a second (2hz, 500ms delay):
 	# gps.send_command(b'PMTK220,500')
+	return gps
 
-def acquire():
+def acquire(gps):
 
 	gps.update()
 	if not gps.has_fix:
