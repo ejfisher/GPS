@@ -1,15 +1,14 @@
-
+	import time
+	import board
+	import busio
+	import serial
+	import adafruit_gps
 
 def acquire():
 	# Simple GPS module demonstration.
 	# Will wait for a fix and print a message every second with the current location
 	# and other details.
-	import time
-	import board
-	import busio
-	import serial
 
-	import adafruit_gps
 
 	# for a computer, use the pyserial library for uart access
 
