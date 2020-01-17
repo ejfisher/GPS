@@ -39,12 +39,12 @@ def acquire():
 	# Every second print out current location details if there's a fix.
 	while not gps.has_fix:
 		# Try again if we don't have a fix yet.
-		print('Waiting for fix...')
 		gps.update()
 		#continue
 	# We have a fix! (gps.has_fix is true)
 	# Print out details about the fix like location, date, etc.
 	time = (gps.timestamp_utc.tm_hour, gps.timestamp_utc.tm_min, gps.timestamp_utc.tm_sec)
+	#Data Tuple of (Latitude, Longitude, Altitude, Speed, TAD, HD)
 	gpsData = (gps.latitude, gps.longitude, gps.altitude_m, gps.speed_knots, gps.track_angle_deg, gps.horizontal_dilution)
 	gpsQuality = (gps.fix_quality, gps.satellites)
 	
