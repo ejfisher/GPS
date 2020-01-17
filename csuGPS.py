@@ -4,9 +4,6 @@ import busio
 import serial
 import adafruit_gps
 
-
-init = True
-
 def init():
 	# for a computer, use the pyserial library for uart access
 	uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)
@@ -23,7 +20,7 @@ def init():
 	# gps.send_command(b'PMTK220,500')
 	return gps
 
-def acquire():
+def acquire(init):
 
 	if(init):
 		print("Initializing...\n")
