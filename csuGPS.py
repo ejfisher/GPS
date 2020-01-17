@@ -44,11 +44,11 @@ def acquire():
 		#continue
 	# We have a fix! (gps.has_fix is true)
 	# Print out details about the fix like location, date, etc.
+	time = (gps.timestamp_utc.tm_hour, gps.timestamp_utc.tm_min, gps.timestamp_utc.tm_sec)
+	gpsData = (gps.latitude, gps.longitude, gps.altitude_m, gps.speed_knots, gps.track_angle_deg, gps.horizontal_dilution)
+	gpsQuality = (gps.fix_quality, gps.satellites)
 	print('=' * 40)  # Print a separator line.
-	print('Fix timestamp: {:02}:{:02}:{:02}'.format(  
-			gps.timestamp_utc.tm_hour,  # not get all data like year, day,
-			gps.timestamp_utc.tm_min,   # month!
-			gps.timestamp_utc.tm_sec))
+	print('Fix timestamp: {:02}:{:02}:{:02}'.format(time))
 	print('Latitude: {0:.6f} degrees'.format(gps.latitude))
 	print('Longitude: {0:.6f} degrees'.format(gps.longitude))
 	print('Fix quality: {}'.format(gps.fix_quality))
