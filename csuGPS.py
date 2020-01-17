@@ -5,7 +5,7 @@ import serial
 import adafruit_gps
 
 
-init = False
+init = True
 
 def init():
 	# for a computer, use the pyserial library for uart access
@@ -25,10 +25,10 @@ def init():
 
 def acquire():
 
-	if(!init):
+	if(init):
 		print("Initializing...\n")
 		gps = init()
-		init = True
+		init = False
 	gps.update()
 	if not gps.has_fix:
 	# Try again if we don't have a fix yet.
