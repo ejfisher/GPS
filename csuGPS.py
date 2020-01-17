@@ -4,7 +4,7 @@ import busio
 import serial
 import adafruit_gps
 
-def acquire(initBool):
+def acquire():
 
 	print("Initializing...\n")
 	# for a computer, use the pyserial library for uart access
