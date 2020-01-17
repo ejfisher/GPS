@@ -44,6 +44,7 @@ def acquire():
 	# We have a fix! (gps.has_fix is true)
 	# Print out details about the fix like location, date, etc.
 	print('=' * 40)  # Print a separator line.
+	print(type(gps.latitude))
 	print('Latitude: {0:.6f} degrees'.format(gps.latitude))
 	print('Longitude: {0:.6f} degrees'.format(gps.longitude))
 	print('Fix quality: {}'.format(gps.fix_quality))
