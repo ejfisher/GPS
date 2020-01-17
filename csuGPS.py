@@ -31,6 +31,9 @@ def acquire():
 	global gps
 	global uart
 
+
+
+
 	# Main loop runs forever printing the location, etc. every second.
 	last_print = time.monotonic()
 	# Make sure to call gps.update() every loop iteration and at least twice
@@ -40,6 +43,8 @@ def acquire():
 	gps.update()
 	# Every second print out current location details if there's a fix.
 	current = time.monotonic()
+	if current - last_print >= 1.0:
+		last_print = current
 	if not gps.has_fix:
 		# Try again if we don't have a fix yet.
 		print('Waiting for fix...')
