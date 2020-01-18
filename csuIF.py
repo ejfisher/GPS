@@ -12,7 +12,7 @@ csuI2C.init()
 # gpsQuality = (fix-quality, # of Sattelites)
 while True:
 	gpsTime, gpsData,gpsQuality = csuGPS.acquire()
-	acc, mag, gyro = csuI2C.acquire()
+	acc, mag, gyro, pressure, altitude, temperature  = csuI2C.acquire()
 	#display data aquired
 	print('=' * 40)  # Print a separator line.
 	print('Acceleration (m/s^2): ({0:0.3f},{1:0.3f},{2:0.3f})'.format(*acc))
@@ -22,6 +22,10 @@ while True:
 	print('Fix timestamp: {0[0]:02}:{0[1]:02}:{0[2]:02} '.format(gpsTime))
 	print('Latitude: {0[0]:.6f} degrees\nLongitude: {0[1]:.6f} degrees\nAltitude: {0[2]} meters'.format(gpsData))
 	print('Fix quality: {0[0]}\n# satellites: {0[1]}'.format(gpsQuality))
+	print('=' * 40)  # Print a separator line.
+	print('Pressure: {0:0.3f} pascals'.format(pressure))
+    print('Altitude: {0:0.3f} meters'.format(altitude))
+    print('Temperature: {0:0.3f} degrees Celsius'.format(temperature))
 	time.sleep(1)
 
 
