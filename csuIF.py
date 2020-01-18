@@ -22,7 +22,7 @@ while True:
 	print('Fix timestamp: {0[0]:02}:{0[1]:02}:{0[2]:02} '.format(gpsTime))
 	print('Latitude: {0[0]:.6f} degrees\nLongitude: {0[1]:.6f} degrees\nAltitude: {0[2]} meters'.format(gpsData))
 	print('Fix quality: {0[0]}\n# satellites: {0[1]}'.format(gpsQuality))
-	time.delay(1)
+	time.sleep(1)
 
 
 print('=' * 40)  # Print a separator line.
