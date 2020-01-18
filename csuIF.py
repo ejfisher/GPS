@@ -1,10 +1,10 @@
 import csuGPS
-import time
-import adafruit_gps
+import csuI2C
 #gps = csuGPS.init()
 #print(type(gps))
 
 csuGPS.init()
+csuI2C.init()
 # Return Tuples for aquire are in the format
 # time = (utc-hr, utc-min, utc-sec)
 # gpsData = (Latitude, Longitude, Altitude, Speed, TAD, HD)
