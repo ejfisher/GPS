@@ -1,12 +1,22 @@
-def init(filename):
+
+
+
+def init(filename, header):
+	
+	fstring = filename[:-4] + "\n"
+	for val in header:
+		fstring = fstring + str(val) + ","
+	fstring = fstring[:-1] + "\n"
 	f = open("Data/" + filename, 'w')
-	f.write(filename[:-4] + "\n")
+	f.write(fstring)
 	f.close()
 
 def write(filename, dArray):
-	f = open("Data/" + filename, 'a')
+	fstring = ""
 	for val in dArray:
-		f.write(str(val) + ', ')
-	f.write('\n')
+		fstring = fstring + str(val) + ', '
+	fstring = fstring[:-1] + '\n'
+	f = open("Data/" + filename, 'a')
+	f.write(fsring)
 	f.close()
 

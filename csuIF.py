@@ -4,11 +4,19 @@ import csuDM
 import time
 #gps = csuGPS.init()
 #print(type(gps))
-dNames = ['gpsTime.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'mpl.txt']
+
+timeA = ["Hours", "Minutes", "Seconds"]
+gpsD = ["Latitude", "Longitude", "Altitude"]
+gpsQ = ["Quality", "# of Satellites"]
+axis = ["X", "Y", "Z"]
+mplA = ["Pressure", "Altitude", "Temperature"]
+headers = [timeA, gpsD, gpsQ, axis, axis, axis, mplA]
+dNames = ['Time.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'mpl.txt']
+
 csuGPS.init()
 csuI2C.init()
-for f in dNames:
-		csuDM.init(f)
+for i in range(7):
+		csuDM.init(dnames[i], headers[i])
 # Return Tuples for aquire are in the format
 # time = (utc-hr, utc-min, utc-sec)
 # gpsData = (Latitude, Longitude, Altitude, Speed, TAD, HD)
