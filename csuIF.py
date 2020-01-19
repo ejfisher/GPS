@@ -15,9 +15,9 @@ while True:
 	dNames = ['gpsTime.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'pressure.txt', 'altitude.txt', 'temperature.txt']
 	for f in dNames:
 		csuDM.init(f)
-	bigData = [gpsTime, gpsData, gpsQuality, acc, mag, gyro, pressure, altitude, temperature]
 	gpsTime, gpsData,gpsQuality = csuGPS.acquire()
 	acc, mag, gyro, pressure, altitude, temperature  = csuI2C.acquire()
+	bigData = [gpsTime, gpsData, gpsQuality, acc, mag, gyro, pressure, altitude, temperature]
 
 	#Take the aquired data and output to a file
 	for i in range(9):
