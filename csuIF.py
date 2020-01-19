@@ -11,8 +11,17 @@ csuI2C.init()
 # gpsData = (Latitude, Longitude, Altitude, Speed, TAD, HD)
 # gpsQuality = (fix-quality, # of Sattelites)
 while True:
+	dNames = ['gpsTime.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'pressure.txt', 'altitude.txt', 'temperature.txt']
+	for f in dNames:
+		csuDM.init(f)
+	bigData = [gpsTime, gpsData, gpsQuality, acc, mag, gyro, pressure, altitude, temperature]
 	gpsTime, gpsData,gpsQuality = csuGPS.acquire()
 	acc, mag, gyro, pressure, altitude, temperature  = csuI2C.acquire()
+
+	#Take the aquired data and output to a file
+	for i in range(9):
+		csuDM.write(dNames[i], bigData[i])
+
 	#display data aquired
 	print('=' * 40)  # Print a separator line.
 	print('Acceleration (m/s^2): ({0:0.3f},{1:0.3f},{2:0.3f})'.format(*acc))
@@ -27,6 +36,8 @@ while True:
 	print('Altitude: {0:0.3f} meters'.format(altitude))
 	print('Temperature: {0:0.3f} degrees Celsius'.format(temperature))
 	time.sleep(1)
+
+
 
 
 print('=' * 40)  # Print a separator line.
