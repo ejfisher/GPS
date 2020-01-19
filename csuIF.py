@@ -11,7 +11,7 @@ csuI2C.init()
 # time = (utc-hr, utc-min, utc-sec)
 # gpsData = (Latitude, Longitude, Altitude, Speed, TAD, HD)
 # gpsQuality = (fix-quality, # of Sattelites)
-while True:
+for i in range(30):
 	dNames = ['gpsTime.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'mpl.txt']
 	for f in dNames:
 		csuDM.init(f)
@@ -22,6 +22,7 @@ while True:
 	#Take the aquired data and output to a file
 	for i in range(7):
 		csuDM.write(dNames[i], bigData[i])
+		print("writing to the file")
 
 	#display data aquired
 	print('=' * 40)  # Print a separator line.
