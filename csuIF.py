@@ -33,9 +33,7 @@ while True:
 	print('Latitude: {0[0]:.6f} degrees\nLongitude: {0[1]:.6f} degrees\nAltitude: {0[2]} meters'.format(gpsData))
 	print('Fix quality: {0[0]}\n# satellites: {0[1]}'.format(gpsQuality))
 	print('=' * 40)  # Print a separator line.
-	print('Pressure: {0:0.3f} pascals'.format(mpl))
-	print('Altitude: {1:0.3f} meters'.format(mpl))
-	print('Temperature: {2:0.3f} degrees Celsius'.format(mpl))
+	print('Pressure: {0[0]:0.3f} pascals\nAltitude: {0[1]:0.3f} meters\nTemperature: {0[2]:0.3f} degrees Celsius'.format(mpl))
 	time.sleep(1)
 
 
