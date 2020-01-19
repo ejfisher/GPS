@@ -21,5 +21,6 @@ def acquire():
 	#print('Acceleration (m/s^2): ({0:0.3f},{1:0.3f},{2:0.3f})'.format(*fxos.accelerometer))
 	#print('Magnetometer (uTesla): ({0:0.3f},{1:0.3f},{2:0.3f})'.format(*fxos.magnetometer))
 	#print('Gyroscope (radians/s): ({0:0.3f},{1:0.3f},{2:0.3f})'.format(*fxas.gyroscope))
+	mplVal = (mpl.pressured, mpl.altitude, mpl.temperature)
     
-	return fxos.accelerometer, fxos.magnetometer, fxas.gyroscope, mpl.pressure, mpl.altitude, mpl.temperature
+	return fxos.accelerometer, fxos.magnetometer, fxas.gyroscope, mplVal
