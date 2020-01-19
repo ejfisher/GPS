@@ -17,6 +17,6 @@ def write(filename, dArray):
 		fstring = fstring + str(val) + ', '
 	fstring = fstring[:-1] + '\n'
 	f = open("Data/" + filename, 'a')
-	f.write(fsring)
+	f.write(fstring)
 	f.close()
 
