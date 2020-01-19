@@ -11,7 +11,7 @@ gpsQ = ["Quality", "# of Satellites"]
 axis = ["X", "Y", "Z"]
 mplA = ["Pressure", "Altitude", "Temperature"]
 headers = [timeA, gpsD, gpsQ, axis, axis, axis, mplA]
-dNames = ['Time.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gyro.txt', 'mpl.txt']
+dNames = ['Time.csv', 'gpsData.csv', 'gpsQuality.csv', 'acc.csv', 'mag.csv', 'gyro.csv', 'mpl.csv']
 
 csuGPS.init()
 csuI2C.init()
