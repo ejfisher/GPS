@@ -20,7 +20,7 @@ while True:
 	bigData = [gpsTime, gpsData, gpsQuality, acc, mag, gyro, mpl]
 
 	#Take the aquired data and output to a file
-	for i in range(9):
+	for i in range(7):
 		csuDM.write(dNames[i], bigData[i])
 
 	#display data aquired
