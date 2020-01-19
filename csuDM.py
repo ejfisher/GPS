@@ -6,7 +6,7 @@ def init(filename):
 def write(filename, dArray):
 	f = open(filename, 'a')
 	for val in dArray:
-		f.write(val + ', ')
+		f.write(str(val) + ', ')
 	f.write('\n')
 	f.close()
 
