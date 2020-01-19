@@ -16,7 +16,7 @@ dNames = ['Time.txt', 'gpsData.txt', 'gpsQuality.txt', 'acc.txt', 'mag.txt', 'gy
 csuGPS.init()
 csuI2C.init()
 for i in range(7):
-		csuDM.init(dnames[i], headers[i])
+		csuDM.init(dNames[i], headers[i])
 # Return Tuples for aquire are in the format
 # time = (utc-hr, utc-min, utc-sec)
 # gpsData = (Latitude, Longitude, Altitude, Speed, TAD, HD)
